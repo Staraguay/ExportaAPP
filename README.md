@@ -3,6 +3,9 @@ Exporta - Recruitment - Product & Engineering Case
 
 Web application developed with the Django framework and python 3.9
 
+URL index
+
+http://localhost:8000/RFQ/index/
 
 operation similar to the application created in bubble.io
 
