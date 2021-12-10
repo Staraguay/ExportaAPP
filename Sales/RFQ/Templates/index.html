@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Exporta - Sales
+{% endblock %}
+
+{% block content %}
+
+<!--NavBar-->
+<nav id="Head" class="navbar navbar-expand-lg navbar-light bg-light shadow p-3 mb-5 bg-white rounded">
+  <div class="container-fluid">
+    {% load static %}
+    <img src="{% static 'media/logo.png'%}">
+
+    <ul class="nav">
+      <li class="nav-item" style="list-style-type:none;">
+          <a class="nav-link" aria-current="page" href="#">Home</a>
+      </li>
+      <li class="nav-item" style="list-style-type:none;">
+          <a class="nav-link" aria-current="page" href="#">RFQ</a>
+      </li>
+    </ul>
+
+  </div>
+    <div class="d-flex align-items-center" style="padding-right: 25px;" >
+        <img class="nav-link" src="{% static 'media/user.png'%}">
+        <span class="text-dark">Beto</span>
+    </div>
+</nav>
+
+<!--First Page-->
+<div class="container" style="height: 80vh;">
+  <div class="row">
+<!--  Menu rows    -->
+    <div class="col-3" style="border-width: 0px 0px 0px 5px; border-style: solid; border-color: #091747;">
+
+        <div class="card" >
+          <div class="card-body">
+              <p><strong><a href="#Head" style="text-decoration: none; color: inherit;">General view</a></strong></p>
+              <p><a href="#Head" style="text-decoration: none; color: inherit;">Resume of your profile</a></p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 15px;" >
+          <div class="card-body">
+              <p><strong>Personal information</strong></p>
+            <p>Name, direction</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 15px;">
+          <div class="card-body">
+              <p><strong><a href="#Table" style="text-decoration: none; color: inherit;">Request for quotes</a></strong></p>
+            <p><a href="#Table" style="text-decoration: none; color: inherit;">All request</a></p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 15px;">
+          <div class="card-body">
+              <p><strong>Log out</strong></p>
+            <p>Log out of your account</p>
+          </div>
+        </div>
+    </div>
+
+<!--Welcome message row-->
+    <div class="col-8" style="margin-left: 25px;">
+        <div class="d-flex justify-content-center">
+
+            <div class="col">
+            <div class="row">
+                <h1 class="text-center" style="color:#091747">¡Hi Beto!<br> Welcome to the largest B2B marketplace in Latin America</h1>
+            </div>
+            <div class="row" style="margin-top:25px; ">
+            <h3>Latest request</h3>
+            </div>
+<!--     Latest Cards   -->
+            <div class="row  gx-5" style="margin-top:25px; ">
+
+
+                <div class="col">
+                <div class="card shadow p-3 mb-5 bg-white rounded" >
+                      <div class="card-body">
+                          <p><strong><a href="#Table" style="text-decoration: none; color: inherit;">Puppy toy</a></strong></p>
+                        <p ><a href="#Table" style="text-decoration: none; color: inherit;">5000</a></p>
+                      </div>
+                    </div>
+                </div>
+
+                   <div class="col">
+                    <div class="card shadow p-3 mb-5 bg-white rounded" >
+                      <div class="card-body">
+                          <p><strong><a href="#Table" style="text-decoration: none; color: inherit;">Flip flops</a></strong></p>
+                        <p><a href="#Table" style="text-decoration: none; color: inherit;">1000</a></p>
+                      </div>
+                    </div>
+                   </div>
+
+
+                    <div class="col">
+                    <div class="card shadow p-3 mb-5 bg-white rounded">
+                      <div class="card-body">
+                          <p><strong><a href="#Table" style="text-decoration: none; color: inherit;">Cow food</a></strong></p>
+                        <p><a href="#Table" style="text-decoration: none; color: inherit;">2000</a></p>
+                      </div>
+                    </div>
+                    </div>
+
+
+            </div>
+
+            </div>
+
+
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Second Page -->
+
+<div id="Table" class="container" style="height: 100vh; background-color: rgba(232,232,232,0.92); margin: 0px; max-width: 100%; padding:50px 100px 50px 100px;">
+        <div class="d-flex justify-content-center">
+
+            <div class="col">
+                <div class="row text-center" style="color: #EB8647; margin-bottom: 25px; ">
+                    <h1>ALL THE REQUEST FOR QUOTES</h1>
+                </div>
+
+
+            <div class="row">
+
+<!--   Data Table             -->
+                <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">buyers name</th>
+                          <th scope="col">Product description</th>
+                          <th scope="col">Quantity</th>
+                          <th scope="col">Lead time</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Dog land</td>
+                          <td>Puppy toy</td>
+                          <td>5000</td>
+                          <td>Jan 30, 2022 12:00 am</td>
+                          <td><button onclick="return abrir_modal('{% url 'Details' 1 %}')"  class="btn btn-primary">Details</button></td>
+                        </tr>
+
+                        <tr>
+                          <td>Zara</td>
+                          <td>Flip flops</td>
+                          <td>1000</td>
+                          <td>Dec 30, 2021 12:00 pm</td>
+                          <td><button onclick="return abrir_modal('{% url 'Details' 2 %}')"  class="btn btn-primary">Details</button></td>
+                        </tr>
+
+                        <tr>
+                          <td>Pronaca</td>
+                          <td>Cow food</td>
+                          <td>2000</td>
+                          <td>Feb 16, 2022 12:00 am</td>
+                          <td><button onclick="return abrir_modal('{% url 'Details' 3 %}')"  class="btn btn-primary">Details</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+            </div>
+            </div>
+
+
+
+
+
+        </div>
+</div>
+
+<!-- Footer -->
+
+<div class="container" style="margin-bottom: 25px; margin-top: 50px;">
+
+    <div class="row">
+        <div class="col">
+            <div class="row " style="width: fit-content">
+                <img src="{% static 'media/logo.png'%}" width="300">
+            </div>
+
+            <div class="row">
+                <p>Exporta Technologies is the largest B2B trade platform enabling transactions between U.S. buyers and Latin American Suppliers</p>
+            </div>
+
+            <div class="row row-cols-4" style="width: fit-content">
+                <a href="https://www.facebook.com/exporta.wholesale" style="text-decoration: none; color: inherit;"> <img src="{% static 'media/fb.jpg'%}" width="35"></a>
+                <a href="https://www.instagram.com/exporta.wholesale/" style="text-decoration: none; color: inherit;"><img src="{% static 'media/insta.jpg'%}" width="35"></a>
+                <a href="https://www.linkedin.com/company/exporta-io/" style="text-decoration: none; color: inherit;"><img src="{% static 'media/link.jpg'%}" width="35"></a>
+                <a href="mailto:wholesale@exporta.io" style="text-decoration: none; color: inherit;"><img src="{% static 'media/mail.jpg'%}" width="35"></a>
+
+            </div>
+        </div>
+        <div class="col" style="padding-left: 35px;">
+            <h3>ABOUT EXPORTA</h3>
+            <ul style="list-style-type:none; padding-left: 0px;">
+            <li><a href="https://wholesale.exporta.io/about-us" style="text-decoration: none; color: inherit;">About us</a></li>
+            <li><a href="https://wholesale.exporta.io/our-platform" style="text-decoration: none; color: inherit;">Out Platform</a></li>
+            <li><a href="https://wholesale.exporta.io/logistics" style="text-decoration: none; color: inherit;">Logistics</a></li>
+            <li><a href="https://wholesale.exporta.io/blog" style="text-decoration: none; color: inherit;">Blog</a></li>
+            <li><a href="https://exporta.io/careers?_ga=2.256452235.1601920132.1639027465-1329640153.1637856756" style="text-decoration: none; color: inherit;">Careers</a></li>
+            </ul>
+         </div>
+    </div>
+
+</div>
+    <footer style="background-color: #1a1e21">
+        <div class="d-flex justify-content-center" style="padding-top: 25px; padding-bottom: 25px;">
+            <p style="color: #ffffff;">© Copyright Exporta Technologies 2021</p>
+        </div>
+    </footer>
+
+
+{% endblock %}

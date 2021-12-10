@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title>{% block title %}{% endblock %}</title>
+
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+
+
+
+</head>
+<body>
+
+
+{% block content %}
+
+{% endblock %}
+
+
+
+<div id="ventana_modal" class="modal fade" role="dialog"></div>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script>
+
+    var $ = jQuery.noConflict();
+        function abrir_modal(url)
+        {
+            $('#ventana_modal').load(url, function()
+            {
+            $(this).modal({
+                backdrop: 'static',
+                keyboard: false
+            })
+            $(this).modal('show');
+            });
+            return false;
+        }
+        function cerrar_modal()
+        {
+        $('#ventana_modal').modal('hide');
+        return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Details</h2>
+            <button onclick="return cerrar_modal()" class="btn-close" type="button" aria-dismiss="modal" aria-label="Close"></button>
+            </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="row">
+
+                <div class="col">
+
+                    <div class="row"><h4>Target price</h4></div>
+                    <div class="row"><p>10000</p></div>
+
+                </div>
+                <div class="col">
+                    <div class="row"><h4>Tech packs</h4></h></div>
+                    <div class="row"><p>N/A</p></div>
+
+                </div>
+                <div class="col">
+                    <div class="row"><h4>Recurrence of purchase</h4></div>
+                    <div class="row"><p>Every trimester</p></div>
+
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col">
+                    <div class="row"><h4>Comments</h4></div>
+                    <div class="row"><p>vegetable-based cow food</p></div>
+                </div>
+
+            </div>
+                    <div class="d-flex justify-content-center" style="margin-top: 50px;">
+                        {% load static%}
+                        <button class="btn btn-primary"><a style="text-decoration: none; color: #ffffff;" href="{% static 'files/file3.pdf'%}" download="file.pdf">Download PDF</a></button>
+                    </div>
+
+
+        </div>
+        <div class="modal-footer">
+
+        </div>
+    </div>
+</div>
